@@ -3,15 +3,20 @@ var express = require('express');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine','ejs');
+require('dotenv').config();
 
 var mongo = require('mongodb').MongoClient;
 var mongoClient;
 
+const PORT = process.env.PORT || 5000
+const user = encodeURIComponent( process.env.DBUSER );
+const pass = encodeURIComponent( process.env.DBPASS );
+var dbConStr = "mongodb+srv://root:root@cluster0-wj5pi.mongodb.net/appRestaurant";
 
-mongo.connect('mongodb://localhost:27017', { useUnifiedTopology: true }, function( err, _client ) {
+mongo.connect( dbConStr, function( err, _client )  {
   if( err ) throw err;
   mongoClient = _client;
-  app.listen(3000, function(){
+  app.listen(PORT, function(){
     console.log('Exameple app listening on port 3000');
   });
 });
