@@ -8,7 +8,7 @@ require('dotenv').config();
 var mongo = require('mongodb').MongoClient;
 var mongoClient;
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 const user = encodeURIComponent( process.env.DBUSER );
 const pass = encodeURIComponent( process.env.DBPASS );
 var dbConStr = "mongodb+srv://root:root@cluster0-wj5pi.mongodb.net/appRestaurant";
@@ -17,20 +17,20 @@ mongo.connect( dbConStr, function( err, _client )  {
   if( err ) throw err;
   mongoClient = _client;
   app.listen(PORT, function(){
-    console.log('Exameple app listening on port 3000');
+    console.log('Exameple app listening on port 5000');
   });
 });
 
 app.get('/', function (req, res) {
-    var db = mongoClient.db("restaurants");
+    var db = mongoClient.db("appRestaurant");
     var opcions = {};
     var query = {};
-    db.collection('restaurants').find( query, opcions ).toArray(function( err, docs ) {
+    db.collection('restaurantes').find( query, opcions ).toArray(function( err, docs ) {
         if( err ) {
             res.render( 'error', {msg:"error a la query"} );
             return;
         }
-        res.render( 'showRestaurants', {"restaurants":docs} );
+        res.render( 'showRestaurants', {"restaurantes":docs} );
     });
 });
 
@@ -44,11 +44,12 @@ app.post('/createRestaurant', function (req, res){
   var inputCategory = req.body.category;
   var inputZipCode = req.body.zipCode;
   var inputPhone = req.body.phone;
-  var db = mongoClient.db("restaurants");
+  var db = mongoClient.db("appRestaurant");
   var myobj = {nombre:inputName,categoria:inputCategory,codigo_postal:inputZipCode,telefono:inputPhone};
-  db.collection("restaurants").insertOne(myobj, function(err, res){
+  db.collection("restaurantes").insertOne(myobj, function(err, res){
     if (err) throw err;
     console.log("1 document inserted");
-    db.close();
+    
+    //db.close();
   });
 });
