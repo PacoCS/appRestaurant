@@ -1,0 +1,29 @@
+{
+  id:1,
+  nom:"McDonals",
+  poblacio:"Abrera",
+  direccio:"C/Industria, 87",
+  coordenadas:{latitud:"12345678",longitud:"87654321"},
+  horaris:[
+    {dow:1, inici:"12:30", final:"17:00"},
+    {dow:1, inici:"20:00", final:"24:00"},
+    {dow:2, inici:"12:30", final:"17:00"},
+    {dow:2, inici:"20:00", final:"24:00"},
+    {dow:3, inici:"12:30", final:"17:00"},
+    {dow:3, inici:"20:00", final:"24:00"},
+    {dow:4, inici:"12:30", final:"17:00"},
+    {dow:4, inici:"20:00", final:"24:00"},
+    {dow:5, inici:"12:30", final:"17:00"},
+    {dow:5, inici:"20:00", final:"24:00"},
+    {dow:6, inici:"12:30", final:"17:00"},
+    {dow:6, inici:"20:00", final:"24:00"},
+    {dow:7, inici:"12:30", final:"17:00"},
+    {dow:7, inici:"20:00", final:"24:00"}
+  ],
+  categories:["comida rapida","hamburgueseria","healthy"],
+  productes:[
+    {nom:"BigMac",descripcio:{"es":"Dos jugosas hamburguesas de carne 100% vacuno español, lechuga fresca y crujiente, cebolla, pepinillo, queso Cheddar fundido y nuestra inimitable salsa secreta. Todo esto envuelto en un nuevo pan de sésamo horneado al estilo tradicional.","cat":"Dos sucoses hamburgueses de carn 100% boví espanyol, enciam fresca i cruixent, ceba, cogombre, formatge Cheddar fos i la nostra inimitable salsa secreta. Tot això embolicat en un nou pa de sèsam fornejat a l'estil tradicional."}},
+    {nom:"CBO",descripcio:{"es":"Extraordinario CBO. Disfruta en McDonald’s de CBO™ , deliciosa hamburguesa con tus tres ingredientes favoritos: Chicken, Bacon, Onion. Delicioso pollo, crujiente bacon y el sabor sorprendente de nuestro crispy onion, con lechuga, queso, una salsa original y un pan único. CBO™. Extraordinario. ","cat":"Extraordinari CBO. Gaudeix en McDonald 's de CBO ™, deliciosa hamburguesa amb els teus tres ingredients preferits: Chicken, Bacon, Onion. Deliciós pollastre, cruixent bacó i el sabor sorprenent del nostre crispy onion, amb enciam, formatge, una salsa original i un pa únic. CBO ™. Extraordinari."}},
+  ],
+
+}
